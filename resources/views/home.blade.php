@@ -46,7 +46,7 @@
     </div>
 
     {{-- Detail Profile --}}
-    <div class="{{auth()->user()->level == 'admin'? 'col-xl-6' : 'col-xl-9'}} col-lg-4 col-sm-6">
+    <div class="{{auth()->user()->level == 'admin'? 'col-xl-6 col-lg-4' : 'col-xl-9 col-lg-8'}} col-sm-6">
         <div class="icon-card mb-30">
             <div class="content ml-20">
                 <h6 class="mb-10">Nama</h6>
