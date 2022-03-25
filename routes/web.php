@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::get('user/hapus/{id}', [UserController::class, 'hapus'])->name('users.hapus');
     Route::get('profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::post('profile/post', [ProfileController::class, 'tambah'])->name('user.post');
 });
 
 Route::group(['prefix' => 'sertifikat', 'middleware' => 'auth'], function () {

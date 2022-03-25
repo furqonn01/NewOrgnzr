@@ -32,11 +32,13 @@ class UserSeeder extends Seeder
         $data->save();
 
 
-        $data = new User();
-        $data->name = 'User 1';
-        $data->email = 'user@gmail.com';
-        $data->password = Hash::make('password');
-        $data->level = 'user';
-        $data->save();
+        for ($i=0; $i < 15; $i++) {
+            $data = new User();
+            $data->name = 'User ' . $i;
+            $data->email = 'user' . $i . '@gmail.com';
+            $data->password = Hash::make('password');
+            $data->level = 'user';
+            $data->save();
+        }
     }
 }

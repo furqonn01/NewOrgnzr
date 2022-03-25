@@ -11,6 +11,9 @@ class SertifController extends Controller
     public function index()
     {
         $sertifs = Sertif::whereKodeUser(auth()->user()->id)->paginate();
+        foreach ($sertifs as $key => $value) {
+            $value['no'] = $key + 1;
+        }
         return view('sertifikat.index', compact('sertifs'));
     }
 

@@ -19,7 +19,7 @@ class UserController extends Controller
         if ($this->cek_level() != 'admin') {
             return redirect(route('home'))->with('error', 'Bukan Hak Anda');
         }
-        $users = User::paginate();
+        $users = User::paginate(10);
 
         return view('users.index', compact('users'));
     }
@@ -29,7 +29,7 @@ class UserController extends Controller
     {
         if ($this->cek_level() != 'admin') {
             return response()->json("Maaf ini bukan hak Anda", 200);
-        } else if(auth()->user()->id == $id){
+        } else if (auth()->user()->id == $id) {
             return response()->json("Maaf ini akun Anda", 200);
         }
         User::whereId($id)->first()->delete();
